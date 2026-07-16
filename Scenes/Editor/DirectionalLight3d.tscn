@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://xxmhyx4cfvpv"]
+
+[ext_resource type="Script" uid="uid://cnsrm2ghbnuoy" path="res://Scripts/Editor/DirectionalLight3d.gd" id="1_8dedg"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" unique_id=1892115074]
+transform = Transform3D(1, 0, 0, 0, 0.9238795, 0.38268346, 0, -0.38268346, 0.9238795, 0, 0, 0)
+light_bake_mode = 1
+sky_mode = 1
+script = ExtResource("1_8dedg")

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cnmu46csw0gn6"]
+
+[ext_resource type="Theme" uid="uid://b8j46s7401lek" path="res://Themes/Dark/ChildWindows.tres" id="1_xssid"]
+[ext_resource type="Script" uid="uid://xgog0gn4ww7o" path="res://Scripts/Editor/QuitAndSaveFile.gd" id="2_alco8"]
+
+[node name="QuitAndSaveFile" type="Window" unique_id=1640863390]
+process_mode = 3
+oversampling_override = 1.0
+title = "退出"
+initial_position = 2
+size = Vector2i(320, 120)
+transient = true
+transient_to_focused = true
+exclusive = true
+unresizable = true
+minimize_disabled = true
+maximize_disabled = true
+theme = ExtResource("1_xssid")
+script = ExtResource("2_alco8")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=550712641]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1749526860]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="Tips" type="Label" parent="Panel/VBoxContainer" unique_id=325566488]
+layout_mode = 2
+text = "项目文件尚未保存。
+是否在退出程序前保存文件？"
+autowrap_mode = 3
+
+[node name="ConfirmBox" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1722012657]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Yes" type="Button" parent="Panel/VBoxContainer/ConfirmBox" unique_id=2039047130]
+layout_mode = 2
+text = "保存"
+
+[node name="No" type="Button" parent="Panel/VBoxContainer/ConfirmBox" unique_id=165700744]
+layout_mode = 2
+text = "放弃"
+
+[node name="Cancel" type="Button" parent="Panel/VBoxContainer/ConfirmBox" unique_id=892008058]
+layout_mode = 2
+text = "取消"

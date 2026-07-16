@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dvgusddf3co5m"]
+
+[ext_resource type="Script" uid="uid://clgjy1562ghd2" path="res://Scripts/Menu/Start.gd" id="1_nt0jr"]
+[ext_resource type="Theme" uid="uid://dn7vxemhmi585" path="res://Themes/Dark/Label.tres" id="1_y4ycm"]
+
+[node name="Start" type="Control" unique_id=604568951]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y4ycm")
+script = ExtResource("1_nt0jr")
+
+[node name="MainContent" type="VBoxContainer" parent="." unique_id=1948545707]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Title" type="Label" parent="MainContent" unique_id=806294632]
+custom_minimum_size = Vector2(32, 20)
+layout_mode = 2
+size_flags_vertical = 1
+text = "=====欢迎使用物理编辑器！====="
+autowrap_mode = 3
+
+[node name="NewProjectButton" type="Button" parent="MainContent" unique_id=822311656]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "新建项目->"
+flat = true
+alignment = 0
+
+[node name="OpenProjectButton" type="Button" parent="MainContent" unique_id=393369612]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "打开项目->"
+flat = true
+alignment = 0

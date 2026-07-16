@@ -1,0 +1,990 @@
+[gd_scene format=3 uid="uid://c5tdf7wc13o6h"]
+
+[ext_resource type="Theme" uid="uid://itlp4rfufo13" path="res://Themes/Dark/FoldableContainers.tres" id="1_y5nj4"]
+[ext_resource type="Script" uid="uid://dul05emnejfbv" path="res://Scripts/Editor/LineEditValueLim.gd" id="2_1ufwe"]
+[ext_resource type="PackedScene" uid="uid://crcyie7k1akk8" path="res://Scenes/Editor/LimitedLineEdit.tscn" id="2_bpolk"]
+[ext_resource type="Theme" uid="uid://b8j46s7401lek" path="res://Themes/Dark/ChildWindows.tres" id="3_bpolk"]
+[ext_resource type="PackedScene" uid="uid://ixsor534h1ay" path="res://Scenes/BuildInWindows/ObjectProperty/Others/AsConstant.tscn" id="4_5jhlj"]
+[ext_resource type="Texture2D" uid="uid://c3k33hx8a5kt6" path="res://Sprites/icon/setting.png" id="5_4djt7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ltmsx"]
+outline_size = 1
+shadow_size = 0
+
+[node name="CustomObject" type="VBoxContainer" unique_id=1519939911]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y5nj4")
+
+[node name="Mechanics" type="VBoxContainer" parent="." unique_id=285809552]
+layout_mode = 2
+
+[node name="s1" type="HSeparator" parent="Mechanics" unique_id=77781048]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Mechanics" unique_id=1242377676]
+layout_mode = 2
+text = "经典力学研究："
+label_settings = SubResource("LabelSettings_ltmsx")
+
+[node name="Mass" type="VBoxContainer" parent="Mechanics" unique_id=1931074051]
+layout_mode = 2
+
+[node name="Mark" type="HBoxContainer" parent="Mechanics/Mass" unique_id=1234322562]
+layout_mode = 2
+
+[node name="AsParticle" type="HBoxContainer" parent="Mechanics/Mass/Mark" unique_id=1947795574]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mechanics/Mass/Mark/AsParticle" unique_id=714251286]
+layout_mode = 2
+text = "是否视为质点："
+
+[node name="CheckButton" type="CheckBox" parent="Mechanics/Mass/Mark/AsParticle" unique_id=1702792978]
+layout_mode = 2
+button_pressed = true
+flat = true
+
+[node name="Value" type="HBoxContainer" parent="Mechanics/Mass" unique_id=169565263]
+layout_mode = 2
+
+[node name="MassValue" type="HBoxContainer" parent="Mechanics/Mass/Value" unique_id=1397932647]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mechanics/Mass/Value/MassValue" unique_id=291020338]
+layout_mode = 2
+text = "质量："
+
+[node name="LineEdit" parent="Mechanics/Mass/Value/MassValue" unique_id=266420381 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+min_value = 0.0
+
+[node name="Index" type="SpinBox" parent="Mechanics/Mass/Value/MassValue" unique_id=298740761]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Mechanics/Mass/Value/MassValue" unique_id=2038381549]
+layout_mode = 2
+text = "kg"
+
+[node name="Constant" parent="Mechanics/Mass/Value" unique_id=1618999396 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="ScaleBox" type="HBoxContainer" parent="Mechanics" unique_id=1578963330]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Mechanics/ScaleBox" unique_id=351943334]
+layout_mode = 2
+text = "缩放："
+
+[node name="xBox" type="HBoxContainer" parent="Mechanics/ScaleBox" unique_id=2111171552]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Mechanics/ScaleBox/xBox" unique_id=1143430500]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="Mechanics/ScaleBox/xBox" unique_id=1252013913 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="yBox" type="HBoxContainer" parent="Mechanics/ScaleBox" unique_id=222325568]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Mechanics/ScaleBox/yBox" unique_id=2108657886]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="Mechanics/ScaleBox/yBox" unique_id=1034541576 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="zBox" type="HBoxContainer" parent="Mechanics/ScaleBox" unique_id=1221143385]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Mechanics/ScaleBox/zBox" unique_id=713031682]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="Mechanics/ScaleBox/zBox" unique_id=125695921 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="ShowShape" type="HBoxContainer" parent="Mechanics" unique_id=871378834]
+layout_mode = 2
+
+[node name="Shape" type="HBoxContainer" parent="Mechanics/ShowShape" unique_id=393284315]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShapeTypes" type="HBoxContainer" parent="Mechanics/ShowShape/Shape" unique_id=1453120837]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mechanics/ShowShape/Shape/ShapeTypes" unique_id=1405620101]
+layout_mode = 2
+text = "几何形状："
+
+[node name="OptionButton" type="OptionButton" parent="Mechanics/ShowShape/Shape/ShapeTypes" unique_id=1137141931]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 8
+popup/item_0/text = "立方体"
+popup/item_0/id = 0
+popup/item_1/text = "球体"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+popup/item_2/text = "圆柱体"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "四棱锥"
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_4/text = "四棱台"
+popup/item_4/id = 4
+popup/item_4/disabled = true
+popup/item_5/text = "圆台"
+popup/item_5/id = 5
+popup/item_5/disabled = true
+popup/item_6/text = "半球体"
+popup/item_6/id = 6
+popup/item_6/disabled = true
+popup/item_7/text = "自定义"
+popup/item_7/id = 7
+popup/item_7/disabled = true
+
+[node name="DefinedShape" type="HBoxContainer" parent="Mechanics/ShowShape/Shape" unique_id=1471258858]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Mechanics/ShowShape/Shape/DefinedShape" unique_id=383734543]
+layout_mode = 2
+text = "自定义："
+
+[node name="TextureButton" type="TextureButton" parent="Mechanics/ShowShape/Shape/DefinedShape" unique_id=603758352]
+layout_mode = 2
+texture_normal = ExtResource("5_4djt7")
+
+[node name="ColorSelect" type="HBoxContainer" parent="Mechanics/ShowShape" unique_id=2056832869]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mechanics/ShowShape/ColorSelect" unique_id=1442633122]
+layout_mode = 2
+text = "填充颜色："
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Mechanics/ShowShape/ColorSelect" unique_id=672629117]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+flat = true
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+edit_intensity = false
+
+[node name="Damping" type="HBoxContainer" parent="Mechanics" unique_id=1974182472]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Value" type="HBoxContainer" parent="Mechanics/Damping" unique_id=896439392]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mechanics/Damping/Value" unique_id=32697764]
+layout_mode = 2
+text = "阻尼系数："
+
+[node name="LineEdit" type="LineEdit" parent="Mechanics/Damping/Value" unique_id=127800313]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0.0"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+script = ExtResource("2_1ufwe")
+limit_min = true
+min_value = 0.0
+
+[node name="Index" type="SpinBox" parent="Mechanics/Damping/Value" unique_id=342175923]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Constant" parent="Mechanics/Damping" unique_id=1369576297 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="Constraint" type="VBoxContainer" parent="Mechanics" unique_id=221885984]
+layout_mode = 2
+
+[node name="ConstraintType" type="HBoxContainer" parent="Mechanics/Constraint" unique_id=1332686777]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Mechanics/Constraint/ConstraintType" unique_id=1448383165]
+layout_mode = 2
+text = "约束类型："
+
+[node name="OptionButton" type="OptionButton" parent="Mechanics/Constraint/ConstraintType" unique_id=1937262654]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "弹簧"
+popup/item_0/id = 0
+popup/item_1/text = "绳"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+popup/item_2/text = "杆"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "铰链"
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_4/text = "导轨"
+popup/item_4/id = 4
+popup/item_4/disabled = true
+
+[node name="Spring" type="VBoxContainer" parent="Mechanics/Constraint" unique_id=363494584]
+layout_mode = 2
+
+[node name="SpringConstant" type="HBoxContainer" parent="Mechanics/Constraint/Spring" unique_id=1624039022]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Value" type="HBoxContainer" parent="Mechanics/Constraint/Spring/SpringConstant" unique_id=931251684]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mechanics/Constraint/Spring/SpringConstant/Value" unique_id=212202922]
+layout_mode = 2
+text = "弹簧劲度系数："
+
+[node name="LineEdit" parent="Mechanics/Constraint/Spring/SpringConstant/Value" unique_id=897957553 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+limit_min = true
+min_value = 0.0
+
+[node name="Unit" type="Label" parent="Mechanics/Constraint/Spring/SpringConstant/Value" unique_id=342962779]
+layout_mode = 2
+text = "N/m"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Mechanics/Constraint/Spring/SpringConstant" unique_id=846123511 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="NaturalLength" type="HBoxContainer" parent="Mechanics/Constraint/Spring" unique_id=98764359]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Value" type="HBoxContainer" parent="Mechanics/Constraint/Spring/NaturalLength" unique_id=1133865746]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mechanics/Constraint/Spring/NaturalLength/Value" unique_id=641941707]
+layout_mode = 2
+text = "弹簧自然长度："
+
+[node name="LineEdit" parent="Mechanics/Constraint/Spring/NaturalLength/Value" unique_id=1417811077 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+min_value = 0.0
+
+[node name="Index" type="SpinBox" parent="Mechanics/Constraint/Spring/NaturalLength/Value" unique_id=175391511]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Mechanics/Constraint/Spring/NaturalLength/Value" unique_id=1939152356]
+layout_mode = 2
+text = "m"
+
+[node name="Constant" parent="Mechanics/Constraint/Spring/NaturalLength" unique_id=1301942713 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="Electromagnetism" type="VBoxContainer" parent="." unique_id=1780100713]
+layout_mode = 2
+
+[node name="s2" type="HSeparator" parent="Electromagnetism" unique_id=1589350271]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Electromagnetism" unique_id=171650549]
+layout_mode = 2
+text = "电磁学研究："
+label_settings = SubResource("LabelSettings_ltmsx")
+
+[node name="ChargePoint" type="HBoxContainer" parent="Electromagnetism" unique_id=702527977]
+layout_mode = 2
+
+[node name="ChargePointBtn" type="HBoxContainer" parent="Electromagnetism/ChargePoint" unique_id=898021418]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Electromagnetism/ChargePoint/ChargePointBtn" unique_id=152906090]
+layout_mode = 2
+text = "是否视为点电荷："
+
+[node name="CheckButton" type="CheckBox" parent="Electromagnetism/ChargePoint/ChargePointBtn" unique_id=1211276502]
+layout_mode = 2
+disabled = true
+button_pressed = true
+flat = true
+
+[node name="ChargeTypes" type="HBoxContainer" parent="Electromagnetism/ChargePoint" unique_id=1647262918]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Electromagnetism/ChargePoint/ChargeTypes" unique_id=1347381624]
+layout_mode = 2
+text = "带电种类："
+
+[node name="OptionButton" type="OptionButton" parent="Electromagnetism/ChargePoint/ChargeTypes" unique_id=655522367]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "正电性"
+popup/item_0/id = 0
+popup/item_1/text = "负电性"
+popup/item_1/id = 1
+popup/item_2/text = "电中性"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+
+[node name="Charge" type="VBoxContainer" parent="Electromagnetism" unique_id=583167451]
+layout_mode = 2
+
+[node name="Value" type="HBoxContainer" parent="Electromagnetism/Charge" unique_id=55638536]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Electromagnetism/Charge/Value" unique_id=1143259302]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Electromagnetism/Charge/Value/Value" unique_id=1774558733]
+layout_mode = 2
+text = "带电量："
+
+[node name="LineEdit" parent="Electromagnetism/Charge/Value/Value" unique_id=2117395827 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+text = "1"
+decimal_places = 0
+
+[node name="Index" type="SpinBox" parent="Electromagnetism/Charge/Value/Value" unique_id=1672859222]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Electromagnetism/Charge/Value/Value" unique_id=866782645]
+layout_mode = 2
+text = "C"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Electromagnetism/Charge/Value" unique_id=129310757 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="TotalValue" type="HBoxContainer" parent="Electromagnetism/Charge" unique_id=1849109410]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Electromagnetism/Charge/TotalValue" unique_id=1936111499]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Electromagnetism/Charge/TotalValue/Value" unique_id=1152670203]
+layout_mode = 2
+text = "总电荷："
+
+[node name="LineEdit" parent="Electromagnetism/Charge/TotalValue/Value" unique_id=1067345316 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+text = "1"
+decimal_places = 0
+
+[node name="Index" type="SpinBox" parent="Electromagnetism/Charge/TotalValue/Value" unique_id=877592131]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Electromagnetism/Charge/TotalValue/Value" unique_id=2052370047]
+layout_mode = 2
+text = "C"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Electromagnetism/Charge/TotalValue" unique_id=195186322 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="NetValue" type="HBoxContainer" parent="Electromagnetism/Charge" unique_id=124377468]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Electromagnetism/Charge/NetValue" unique_id=536683817]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Electromagnetism/Charge/NetValue/Value" unique_id=559262973]
+layout_mode = 2
+text = "净电荷："
+
+[node name="LineEdit" parent="Electromagnetism/Charge/NetValue/Value" unique_id=1903107077 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+text = "1"
+decimal_places = 0
+
+[node name="Index" type="SpinBox" parent="Electromagnetism/Charge/NetValue/Value" unique_id=1076639351]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Electromagnetism/Charge/NetValue/Value" unique_id=1956567662]
+layout_mode = 2
+text = "C"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Electromagnetism/Charge/NetValue" unique_id=1083037752 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="Conductivity" type="HBoxContainer" parent="Electromagnetism" unique_id=973812244]
+layout_mode = 2
+
+[node name="ConductorTypes" type="HBoxContainer" parent="Electromagnetism/Conductivity" unique_id=419998377]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Electromagnetism/Conductivity/ConductorTypes" unique_id=1451618464]
+layout_mode = 2
+text = "导电能力："
+
+[node name="OptionButton" type="OptionButton" parent="Electromagnetism/Conductivity/ConductorTypes" unique_id=2074446877]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "导体"
+popup/item_0/id = 0
+popup/item_1/text = "绝缘体"
+popup/item_1/id = 1
+popup/item_2/text = "半导体"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+
+[node name="SemiconductorTypes" type="HBoxContainer" parent="Electromagnetism/Conductivity" unique_id=1749548128]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Electromagnetism/Conductivity/SemiconductorTypes" unique_id=308651997]
+layout_mode = 2
+text = "半导体种类："
+
+[node name="OptionButton" type="OptionButton" parent="Electromagnetism/Conductivity/SemiconductorTypes" unique_id=803233132]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 7
+popup/item_0/text = "二极管"
+popup/item_0/id = 0
+popup/item_1/text = "热敏电阻"
+popup/item_1/id = 1
+popup/item_2/text = "光敏电阻"
+popup/item_2/id = 2
+popup/item_3/text = "霍尔元件"
+popup/item_3/id = 3
+popup/item_4/text = "太阳能板"
+popup/item_4/id = 4
+popup/item_5/text = "N型"
+popup/item_5/id = 5
+popup/item_6/text = "P型"
+popup/item_6/id = 6
+
+[node name="MagneticStrength" type="VBoxContainer" parent="Electromagnetism" unique_id=1207952911]
+layout_mode = 2
+
+[node name="MagnetTypes" type="HBoxContainer" parent="Electromagnetism/MagneticStrength" unique_id=1622564941]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Electromagnetism/MagneticStrength/MagnetTypes" unique_id=1919275587]
+layout_mode = 2
+text = "磁体类型："
+
+[node name="OptionButton" type="OptionButton" parent="Electromagnetism/MagneticStrength/MagnetTypes" unique_id=1487540452]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 4
+popup/item_0/text = "条形磁体"
+popup/item_0/id = 0
+popup/item_1/text = "小磁针"
+popup/item_1/id = 1
+popup/item_2/text = "蹄形磁体"
+popup/item_2/id = 2
+popup/item_3/text = "环形磁体"
+popup/item_3/id = 3
+
+[node name="MagnetValue" type="HBoxContainer" parent="Electromagnetism/MagneticStrength" unique_id=752141052]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Electromagnetism/MagneticStrength/MagnetValue" unique_id=1181949685]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Electromagnetism/MagneticStrength/MagnetValue/Value" unique_id=1848214482]
+layout_mode = 2
+text = "磁化强度："
+
+[node name="Num" type="SpinBox" parent="Electromagnetism/MagneticStrength/MagnetValue/Value" unique_id=182619249]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+
+[node name="Unit" type="Label" parent="Electromagnetism/MagneticStrength/MagnetValue/Value" unique_id=388533133]
+layout_mode = 2
+text = "Br"
+
+[node name="Constant" parent="Electromagnetism/MagneticStrength/MagnetValue" unique_id=151980375 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="MagnetRotation" type="HBoxContainer" parent="Electromagnetism" unique_id=325242953]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Electromagnetism/MagnetRotation" unique_id=535600364]
+layout_mode = 2
+text = "旋转："
+
+[node name="xBox" type="HBoxContainer" parent="Electromagnetism/MagnetRotation" unique_id=1085014078]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Electromagnetism/MagnetRotation/xBox" unique_id=2083799115]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="Electromagnetism/MagnetRotation/xBox" unique_id=1569950229 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+min_value = -360.0
+max_value = 360.0
+
+[node name="yBox" type="HBoxContainer" parent="Electromagnetism/MagnetRotation" unique_id=1441851274]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Electromagnetism/MagnetRotation/yBox" unique_id=1201551519]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="Electromagnetism/MagnetRotation/yBox" unique_id=528114077 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+min_value = -360.0
+max_value = 360.0
+
+[node name="zBox" type="HBoxContainer" parent="Electromagnetism/MagnetRotation" unique_id=1177895861]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Electromagnetism/MagnetRotation/zBox" unique_id=1715907352]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="Electromagnetism/MagnetRotation/zBox" unique_id=1737801443 instance=ExtResource("2_bpolk")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+min_value = -360.0
+max_value = 360.0
+
+[node name="Thermodynamics" type="VBoxContainer" parent="." unique_id=1356821893]
+layout_mode = 2
+
+[node name="s3" type="HSeparator" parent="Thermodynamics" unique_id=252843863]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Thermodynamics" unique_id=1357558645]
+layout_mode = 2
+text = "热力学研究："
+label_settings = SubResource("LabelSettings_ltmsx")
+
+[node name="ThermalMode" type="HBoxContainer" parent="Thermodynamics" unique_id=2030239610]
+layout_mode = 2
+
+[node name="AdiabaticBtn" type="HBoxContainer" parent="Thermodynamics/ThermalMode" unique_id=17641408]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/ThermalMode/AdiabaticBtn" unique_id=2103755769]
+layout_mode = 2
+text = "是否绝热："
+
+[node name="CheckButton" type="CheckBox" parent="Thermodynamics/ThermalMode/AdiabaticBtn" unique_id=991117736]
+layout_mode = 2
+flat = true
+
+[node name="IsothermalBtn" type="HBoxContainer" parent="Thermodynamics/ThermalMode" unique_id=811261684]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/ThermalMode/IsothermalBtn" unique_id=1248088511]
+layout_mode = 2
+text = "是否等温："
+
+[node name="CheckButton" type="CheckBox" parent="Thermodynamics/ThermalMode/IsothermalBtn" unique_id=329472074]
+layout_mode = 2
+flat = true
+
+[node name="Temperature" type="HBoxContainer" parent="Thermodynamics" unique_id=666259522]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Thermodynamics/Temperature" unique_id=1499394151]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/Temperature/Value" unique_id=1259909577]
+layout_mode = 2
+text = "温度："
+
+[node name="Num" type="SpinBox" parent="Thermodynamics/Temperature/Value" unique_id=1403570599]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+step = 0.001
+allow_greater = true
+
+[node name="Index" type="SpinBox" parent="Thermodynamics/Temperature/Value" unique_id=523730480]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Thermodynamics/Temperature/Value" unique_id=779843649]
+layout_mode = 2
+text = "K"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Thermodynamics/Temperature" unique_id=1383647615 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="Volume" type="HBoxContainer" parent="Thermodynamics" unique_id=601170834]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Thermodynamics/Volume" unique_id=1456617455]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/Volume/Value" unique_id=185427028]
+layout_mode = 2
+text = "体积："
+
+[node name="Num" type="SpinBox" parent="Thermodynamics/Volume/Value" unique_id=1971048384]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+step = 0.001
+allow_greater = true
+
+[node name="Index" type="SpinBox" parent="Thermodynamics/Volume/Value" unique_id=929145091]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Thermodynamics/Volume/Value" unique_id=1871181198]
+layout_mode = 2
+text = "dm³"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Thermodynamics/Volume" unique_id=246407971 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="Pressure" type="HBoxContainer" parent="Thermodynamics" unique_id=308016057]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Thermodynamics/Pressure" unique_id=10823888]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/Pressure/Value" unique_id=1918494710]
+layout_mode = 2
+text = "绝对压强："
+
+[node name="Num" type="SpinBox" parent="Thermodynamics/Pressure/Value" unique_id=2026848832]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+step = 0.001
+allow_greater = true
+
+[node name="Index" type="SpinBox" parent="Thermodynamics/Pressure/Value" unique_id=1719602792]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Thermodynamics/Pressure/Value" unique_id=1616967461]
+layout_mode = 2
+text = "Pa"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Thermodynamics/Pressure" unique_id=290423074 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="Mol" type="HBoxContainer" parent="Thermodynamics" unique_id=962401915]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Thermodynamics/Mol" unique_id=1468950226]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/Mol/Value" unique_id=269463970]
+layout_mode = 2
+text = "物质的量："
+
+[node name="Num" type="SpinBox" parent="Thermodynamics/Mol/Value" unique_id=476906971]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+step = 0.001
+allow_greater = true
+
+[node name="Index" type="SpinBox" parent="Thermodynamics/Mol/Value" unique_id=1439719825]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Thermodynamics/Mol/Value" unique_id=1344337922]
+layout_mode = 2
+text = "mol"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Thermodynamics/Mol" unique_id=983765807 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="ThermalConductivity" type="HBoxContainer" parent="Thermodynamics" unique_id=58636976]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Thermodynamics/ThermalConductivity" unique_id=505055616]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/ThermalConductivity/Value" unique_id=2084092579]
+layout_mode = 2
+text = "热传导系数："
+
+[node name="Num" type="SpinBox" parent="Thermodynamics/ThermalConductivity/Value" unique_id=1540622152]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+step = 0.001
+allow_greater = true
+
+[node name="Unit" type="Label" parent="Thermodynamics/ThermalConductivity/Value" unique_id=1328739522]
+layout_mode = 2
+text = "W/(m·K)"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Thermodynamics/ThermalConductivity" unique_id=1414529456 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="ThermalExpansion" type="HBoxContainer" parent="Thermodynamics" unique_id=1258594364]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Thermodynamics/ThermalExpansion" unique_id=1500416673]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/ThermalExpansion/Value" unique_id=346839379]
+layout_mode = 2
+text = "热膨胀系数："
+
+[node name="Num" type="SpinBox" parent="Thermodynamics/ThermalExpansion/Value" unique_id=804589516]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+step = 0.01
+allow_greater = true
+allow_lesser = true
+
+[node name="Index" type="SpinBox" parent="Thermodynamics/ThermalExpansion/Value" unique_id=1619508441]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Thermodynamics/ThermalExpansion/Value" unique_id=2103350683]
+layout_mode = 2
+text = "K⁻¹"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Thermodynamics/ThermalExpansion" unique_id=851913100 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="MeltingPoint" type="HBoxContainer" parent="Thermodynamics" unique_id=128313976]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Thermodynamics/MeltingPoint" unique_id=1309769796]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/MeltingPoint/Value" unique_id=2087214330]
+layout_mode = 2
+text = "熔点："
+
+[node name="Num" type="SpinBox" parent="Thermodynamics/MeltingPoint/Value" unique_id=322702688]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+step = 0.001
+allow_greater = true
+allow_lesser = true
+
+[node name="Unit" type="Label" parent="Thermodynamics/MeltingPoint/Value" unique_id=1967516210]
+layout_mode = 2
+text = "K"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Thermodynamics/MeltingPoint" unique_id=1221637460 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="BoilingPoint" type="HBoxContainer" parent="Thermodynamics" unique_id=1430952857]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Thermodynamics/BoilingPoint" unique_id=1284670790]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/BoilingPoint/Value" unique_id=1387620231]
+layout_mode = 2
+text = "沸点："
+
+[node name="Num" type="SpinBox" parent="Thermodynamics/BoilingPoint/Value" unique_id=1825955301]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_bpolk")
+step = 0.001
+allow_greater = true
+allow_lesser = true
+
+[node name="Unit" type="Label" parent="Thermodynamics/BoilingPoint/Value" unique_id=502622457]
+layout_mode = 2
+text = "K"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Thermodynamics/BoilingPoint" unique_id=961695945 instance=ExtResource("4_5jhlj")]
+layout_mode = 2
+
+[node name="State" type="HBoxContainer" parent="Thermodynamics" unique_id=2026535158]
+layout_mode = 2
+
+[node name="ShapeTypes" type="HBoxContainer" parent="Thermodynamics/State" unique_id=1247189796]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Thermodynamics/State/ShapeTypes" unique_id=582645170]
+layout_mode = 2
+text = "初始物态："
+
+[node name="OptionButton" type="OptionButton" parent="Thermodynamics/State/ShapeTypes" unique_id=1349043903]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "固态"
+popup/item_0/id = 0
+popup/item_1/text = "液态"
+popup/item_1/id = 1
+popup/item_2/text = "气态"
+popup/item_2/id = 2
+popup/item_3/text = "固液共存"
+popup/item_3/id = 3
+popup/item_4/text = "液气共存"
+popup/item_4/id = 4
+
+[node name="Optics" type="VBoxContainer" parent="." unique_id=806784528]
+layout_mode = 2
+
+[node name="s4" type="HSeparator" parent="Optics" unique_id=1284540070]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Optics" unique_id=763863178]
+layout_mode = 2
+text = "光学研究："
+label_settings = SubResource("LabelSettings_ltmsx")

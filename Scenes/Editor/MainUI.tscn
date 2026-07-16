@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://df1kjb1ggttgm"]
+
+[ext_resource type="Script" uid="uid://dv210pwox7mla" path="res://Scripts/Menu/MainUI.gd" id="1_c3bvd"]
+[ext_resource type="Script" uid="uid://dqqf107f1jvhn" path="res://Scripts/Menu/MenuButtonSetting.gd" id="2_3ngb3"]
+[ext_resource type="Theme" uid="uid://je474oya5dul" path="res://Themes/Dark/Bar.tres" id="2_8dqd8"]
+[ext_resource type="Theme" uid="uid://botaf12clfxlp" path="res://Themes/Dark/MainUI.tres" id="2_c3bvd"]
+[ext_resource type="Theme" uid="uid://b88q0ty5kldd7" path="res://Themes/Dark/SceneContainer.tres" id="6_1rfkw"]
+[ext_resource type="Texture2D" uid="uid://dx6tao0r3iypd" path="res://Sprites/emoji/happy1.png" id="8_uwgue"]
+
+[node name="MainUI" type="VBoxContainer" unique_id=185937441]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_c3bvd")
+
+[node name="TopBar" type="PanelContainer" parent="." unique_id=1445935447]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme = ExtResource("2_8dqd8")
+
+[node name="MenuBarContainer" type="HBoxContainer" parent="TopBar" unique_id=1611739726]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="File" type="MenuButton" parent="TopBar/MenuBarContainer" unique_id=1133988434]
+layout_mode = 2
+focus_mode = 2
+text = "文件"
+switch_on_hover = true
+item_count = 6
+popup/item_0/text = "新建项目"
+popup/item_0/id = 0
+popup/item_1/text = "打开项目"
+popup/item_1/id = 1
+popup/item_2/text = "保存项目"
+popup/item_2/id = 5
+popup/item_3/text = "另存为..."
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_4/id = 6
+popup/item_4/separator = true
+popup/item_5/text = "退出"
+popup/item_5/id = 2
+
+[node name="Edit" type="MenuButton" parent="TopBar/MenuBarContainer" unique_id=94716131]
+visible = false
+layout_mode = 2
+focus_mode = 2
+disabled = true
+text = "编辑"
+switch_on_hover = true
+item_count = 4
+popup/item_0/text = "复制"
+popup/item_0/id = 0
+popup/item_1/text = "剪切"
+popup/item_1/id = 1
+popup/item_2/text = "粘贴"
+popup/item_2/id = 2
+popup/item_3/text = "删除"
+popup/item_3/id = 3
+
+[node name="Option" type="MenuButton" parent="TopBar/MenuBarContainer" unique_id=1371348022]
+visible = false
+layout_mode = 2
+focus_mode = 2
+disabled = true
+text = "选项"
+switch_on_hover = true
+item_count = 1
+popup/item_0/text = "编辑器主题"
+popup/item_0/id = 0
+
+[node name="Debug" type="MenuButton" parent="TopBar/MenuBarContainer" unique_id=1139340240]
+visible = false
+layout_mode = 2
+focus_mode = 2
+disabled = true
+text = "调试"
+switch_on_hover = true
+item_count = 3
+popup/item_0/text = "控制台窗口"
+popup/item_0/id = 0
+popup/item_1/text = "显示网格"
+popup/item_1/id = 1
+popup/item_2/text = "显示计时"
+popup/item_2/id = 2
+
+[node name="Help" type="MenuButton" parent="TopBar/MenuBarContainer" unique_id=1114244589]
+layout_mode = 2
+focus_mode = 2
+text = "帮助"
+switch_on_hover = true
+item_count = 2
+popup/item_0/text = "帮助文档"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "关于"
+popup/item_1/id = 1
+script = ExtResource("2_3ngb3")
+
+[node name="Emoji" type="TextureRect" parent="TopBar/MenuBarContainer" unique_id=712976346]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+texture = ExtResource("8_uwgue")
+expand_mode = 2
+
+[node name="BackGround" type="PanelContainer" parent="." unique_id=1847705412]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_c3bvd")
+
+[node name="MainArea" type="VBoxContainer" parent="BackGround" unique_id=1085488738]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="MainPanel" type="PanelContainer" parent="BackGround/MainArea" unique_id=1352801127]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_1rfkw")
+
+[node name="MainContent" type="Control" parent="BackGround/MainArea/MainPanel" unique_id=684584252]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BottomPanel" type="PanelContainer" parent="BackGround/MainArea" unique_id=988756820]
+visible = false
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_8dqd8")
+
+[node name="StatusBar" type="HBoxContainer" parent="BackGround/MainArea/BottomPanel" unique_id=2099573919]
+layout_mode = 2

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://di83wltud8jpt"]
+
+[node name="Mark" type="HBoxContainer" unique_id=504770829]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Label" type="Label" parent="." unique_id=1706955368]
+layout_mode = 2
+text = "符号："
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=766402170]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "（选填）"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false

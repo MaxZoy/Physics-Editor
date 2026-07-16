@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://crcyie7k1akk8"]
+
+[ext_resource type="Script" uid="uid://dul05emnejfbv" path="res://Scripts/Editor/LineEditValueLim.gd" id="1_2odpj"]
+
+[node name="LineEdit" type="LineEdit" unique_id=266420381]
+size_flags_horizontal = 3
+text = "0.0"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+select_all_on_focus = true
+script = ExtResource("1_2odpj")

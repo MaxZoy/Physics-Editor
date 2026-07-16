@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://dq4i05y1atqwe"]
+
+[ext_resource type="Theme" uid="uid://itlp4rfufo13" path="res://Themes/Dark/FoldableContainers.tres" id="1_fy58i"]
+[ext_resource type="Script" uid="uid://drkjnhylhdqjd" path="res://Scripts/Items/Objects/ObjectsProperty/BlockProperty.gd" id="2_fy58i"]
+[ext_resource type="Theme" uid="uid://b8j46s7401lek" path="res://Themes/Dark/ChildWindows.tres" id="3_au6l3"]
+[ext_resource type="PackedScene" uid="uid://crcyie7k1akk8" path="res://Scenes/Editor/LimitedLineEdit.tscn" id="3_fy58i"]
+[ext_resource type="PackedScene" uid="uid://ixsor534h1ay" path="res://Scenes/BuildInWindows/ObjectProperty/Others/AsConstant.tscn" id="4_iirir"]
+
+[node name="BlockProperty" type="VBoxContainer" unique_id=1519939911]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fy58i")
+script = ExtResource("2_fy58i")
+
+[node name="Mass" type="VBoxContainer" parent="." unique_id=1931074051]
+layout_mode = 2
+
+[node name="Mark" type="HBoxContainer" parent="Mass" unique_id=1234322562]
+layout_mode = 2
+
+[node name="AsParticle" type="HBoxContainer" parent="Mass/Mark" unique_id=1947795574]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mass/Mark/AsParticle" unique_id=714251286]
+layout_mode = 2
+text = "是否视为质点："
+
+[node name="CheckButton" type="CheckBox" parent="Mass/Mark/AsParticle" unique_id=1702792978]
+layout_mode = 2
+button_pressed = true
+flat = true
+
+[node name="Value" type="HBoxContainer" parent="Mass" unique_id=169565263]
+layout_mode = 2
+
+[node name="MassValue" type="HBoxContainer" parent="Mass/Value" unique_id=477078224]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mass/Value/MassValue" unique_id=1114618351]
+layout_mode = 2
+text = "质量："
+
+[node name="LineEdit" parent="Mass/Value/MassValue" unique_id=266420381 instance=ExtResource("3_fy58i")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+min_value = 0.0
+
+[node name="Index" type="SpinBox" parent="Mass/Value/MassValue" unique_id=1454680330]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_au6l3")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Mass/Value/MassValue" unique_id=585382056]
+layout_mode = 2
+text = "kg"
+
+[node name="Constant" parent="Mass/Value" unique_id=1618999396 instance=ExtResource("4_iirir")]
+layout_mode = 2
+
+[node name="ScaleBox" type="HBoxContainer" parent="." unique_id=1675430788]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScaleBox" unique_id=1888874115]
+layout_mode = 2
+text = "缩放："
+
+[node name="xBox" type="HBoxContainer" parent="ScaleBox" unique_id=379148945]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="ScaleBox/xBox" unique_id=407229529]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="ScaleBox/xBox" unique_id=872673623 instance=ExtResource("3_fy58i")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="yBox" type="HBoxContainer" parent="ScaleBox" unique_id=379963712]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="ScaleBox/yBox" unique_id=1705964031]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="ScaleBox/yBox" unique_id=285150592 instance=ExtResource("3_fy58i")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="zBox" type="HBoxContainer" parent="ScaleBox" unique_id=1399126502]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="ScaleBox/zBox" unique_id=1647357261]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="ScaleBox/zBox" unique_id=1415556270 instance=ExtResource("3_fy58i")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="ShowShape" type="HBoxContainer" parent="." unique_id=871378834]
+layout_mode = 2
+
+[node name="Shape" type="HBoxContainer" parent="ShowShape" unique_id=393284315]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShapeTypes" type="HBoxContainer" parent="ShowShape/Shape" unique_id=1453120837]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ShowShape/Shape/ShapeTypes" unique_id=1405620101]
+layout_mode = 2
+text = "几何形状："
+
+[node name="OptionButton" type="OptionButton" parent="ShowShape/Shape/ShapeTypes" unique_id=1137141931]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 8
+popup/item_0/text = "立方体"
+popup/item_0/id = 0
+popup/item_1/text = "球体"
+popup/item_1/id = 1
+popup/item_2/text = "圆柱体"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "四棱锥"
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_4/text = "四棱台"
+popup/item_4/id = 4
+popup/item_4/disabled = true
+popup/item_5/text = "圆台"
+popup/item_5/id = 5
+popup/item_5/disabled = true
+popup/item_6/text = "半球体"
+popup/item_6/id = 6
+popup/item_6/disabled = true
+popup/item_7/text = "自定义"
+popup/item_7/id = 7
+popup/item_7/disabled = true
+
+[node name="ColorSelect" type="HBoxContainer" parent="ShowShape" unique_id=2056832869]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ShowShape/ColorSelect" unique_id=1442633122]
+layout_mode = 2
+text = "填充颜色："
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="ShowShape/ColorSelect" unique_id=672629117]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+flat = true
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+edit_intensity = false

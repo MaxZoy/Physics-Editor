@@ -1,0 +1,323 @@
+[gd_scene format=3 uid="uid://c0sisqidgmgau"]
+
+[ext_resource type="Theme" uid="uid://b8j46s7401lek" path="res://Themes/Dark/ChildWindows.tres" id="1_s8a21"]
+[ext_resource type="Script" uid="uid://b0gxbcboerh23" path="res://Scripts/Editor/Items/AddGroundWindows.gd" id="2_8yljl"]
+[ext_resource type="Script" uid="uid://cg0ttbmekbdoh" path="res://Scripts/Items/Grounds/GroundTypeSizeLim.gd" id="3_s8a21"]
+[ext_resource type="PackedScene" uid="uid://crcyie7k1akk8" path="res://Scenes/Editor/LimitedLineEdit.tscn" id="4_s8a21"]
+
+[node name="AddGround" type="Window" unique_id=1496429959]
+process_mode = 3
+oversampling_override = 1.0
+title = "新建接触面"
+initial_position = 2
+size = Vector2i(440, 430)
+transient = true
+transient_to_focused = true
+exclusive = true
+unresizable = true
+minimize_disabled = true
+maximize_disabled = true
+theme = ExtResource("1_s8a21")
+script = ExtResource("2_8yljl")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=2049155217]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=761452546]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer" unique_id=1558568317]
+layout_mode = 2
+size_flags_vertical = 3
+draw_focus_border = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer" unique_id=1028604708]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="IDCodeBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=339879683]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/IDCodeBox" unique_id=1186758383]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_font_sizes/font_size = 14
+text = "id_code:"
+
+[node name="Code" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/IDCodeBox" unique_id=1706126133]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_font_sizes/font_size = 14
+text = "*xxxxxx"
+
+[node name="CheckButton" type="CheckButton" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/IDCodeBox" unique_id=1767876485]
+layout_mode = 2
+button_pressed = true
+text = "启用"
+flat = true
+alignment = 1
+
+[node name="ObjLabel" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1402759140]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NameBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/ObjLabel" unique_id=1220281012]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/ObjLabel/NameBox" unique_id=189375482]
+layout_mode = 2
+text = "名称："
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/ObjLabel/NameBox" unique_id=195050285]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "（必填）"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+
+[node name="TypeBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/ObjLabel" unique_id=920815965]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/ObjLabel/TypeBox" unique_id=568662757]
+layout_mode = 2
+text = "类型："
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/ObjLabel/TypeBox" unique_id=463524320]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "约束面"
+popup/item_0/id = 0
+popup/item_1/text = "障碍物"
+popup/item_1/id = 1
+popup/item_2/text = "斜坡"
+popup/item_2/id = 2
+popup/item_3/text = "U形圆轨道"
+popup/item_3/id = 3
+popup/item_4/text = "边界"
+popup/item_4/id = 4
+
+[node name="s1" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=220917578]
+layout_mode = 2
+
+[node name="b1" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1101267526]
+layout_mode = 2
+theme_override_constants/separation = 8
+script = ExtResource("3_s8a21")
+
+[node name="PositionBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1" unique_id=778943361]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox" unique_id=1112463077]
+layout_mode = 2
+text = "位置："
+
+[node name="xBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox" unique_id=1995973330]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox/xBox" unique_id=14597924]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox/xBox" unique_id=266420381 instance=ExtResource("4_s8a21")]
+layout_mode = 2
+
+[node name="yBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox" unique_id=968630287]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox/yBox" unique_id=1407349066]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox/yBox" unique_id=1541093383 instance=ExtResource("4_s8a21")]
+layout_mode = 2
+
+[node name="zBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox" unique_id=663588637]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox/zBox" unique_id=1121903885]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/PositionBox/zBox" unique_id=1015938575 instance=ExtResource("4_s8a21")]
+layout_mode = 2
+
+[node name="SizeBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1" unique_id=1485890773]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox" unique_id=1159254293]
+layout_mode = 2
+text = "大小："
+
+[node name="xBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox" unique_id=1727919463]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox/xBox" unique_id=1051137422]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox/xBox" unique_id=56668782 instance=ExtResource("4_s8a21")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="yBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox" unique_id=1855201485]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox/yBox" unique_id=1388383447]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox/yBox" unique_id=433500623 instance=ExtResource("4_s8a21")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="zBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox" unique_id=92470053]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox/zBox" unique_id=1780279897]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/SizeBox/zBox" unique_id=609745730 instance=ExtResource("4_s8a21")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="RotationBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1" unique_id=1309637642]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox" unique_id=2095532826]
+layout_mode = 2
+text = "旋转："
+
+[node name="xBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox" unique_id=1937998355]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox/xBox" unique_id=1898927359]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox/xBox" unique_id=409364050 instance=ExtResource("4_s8a21")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+min_value = -360.0
+max_value = 360.0
+
+[node name="yBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox" unique_id=2102171249]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox/yBox" unique_id=1390424401]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox/yBox" unique_id=586678402 instance=ExtResource("4_s8a21")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+min_value = -360.0
+max_value = 360.0
+
+[node name="zBox" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox" unique_id=516165930]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox/zBox" unique_id=963303317]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/RotationBox/zBox" unique_id=1935198706 instance=ExtResource("4_s8a21")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+min_value = -360.0
+max_value = 360.0
+
+[node name="ColorSelect" type="HBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1" unique_id=525260113]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/ColorSelect" unique_id=802828093]
+layout_mode = 2
+text = "填充颜色："
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/b1/ColorSelect" unique_id=1495063422]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+edit_intensity = false
+
+[node name="Description" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1516721530]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="s4" type="HSeparator" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Description" unique_id=1547381244]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Description" unique_id=936128367]
+layout_mode = 2
+text = "描述："
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/ScrollContainer/VBoxContainer/Description" unique_id=1872121269]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "（这是接触面）"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+wrap_mode = 1
+
+[node name="ConfirmBox" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1203908127]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Yes" type="Button" parent="Panel/VBoxContainer/ConfirmBox" unique_id=547482635]
+layout_mode = 2
+text = "确定"
+
+[node name="No" type="Button" parent="Panel/VBoxContainer/ConfirmBox" unique_id=1952847281]
+layout_mode = 2
+text = "取消"

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bmahgu8tyirw1"]
+
+[ext_resource type="Script" uid="uid://bbxt37745dbif" path="res://Scripts/Items/Grounds/Ground3d.gd" id="1_o5ptq"]
+[ext_resource type="PhysicsMaterial" uid="uid://eya1vfuquiy8" path="res://PhysicsMaterial/GroundMaterial.tres" id="1_pv745"]
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_ooua1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_f8rov"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5ptq"]
+transparency = 1
+shading_mode = 0
+
+[node name="ConstraintSurface" type="StaticBody3D" unique_id=640077588]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+collision_layer = 4
+collision_mask = 15
+physics_material_override = ExtResource("1_pv745")
+script = ExtResource("1_o5ptq")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=328842172]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("HeightMapShape3D_ooua1")
+
+[node name="GroundShape3D" type="MeshInstance3D" parent="." unique_id=1117855870]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, 3, 0, -3, -1.3113416e-07, 0, 0, 0)
+mesh = SubResource("QuadMesh_f8rov")
+surface_material_override/0 = SubResource("StandardMaterial3D_o5ptq")

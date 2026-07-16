@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://cgqprd7uf7dwd"]
+
+[ext_resource type="Theme" uid="uid://itlp4rfufo13" path="res://Themes/Dark/FoldableContainers.tres" id="1_nlyg7"]
+[ext_resource type="Script" uid="uid://3nvwacyilp6y" path="res://Scripts/Items/Objects/ObjectsProperty/ChargedParticleProperty.gd" id="2_nlyg7"]
+[ext_resource type="PackedScene" uid="uid://crcyie7k1akk8" path="res://Scenes/Editor/LimitedLineEdit.tscn" id="3_ngcuu"]
+[ext_resource type="Theme" uid="uid://b8j46s7401lek" path="res://Themes/Dark/ChildWindows.tres" id="4_r1mtv"]
+[ext_resource type="PackedScene" uid="uid://ixsor534h1ay" path="res://Scenes/BuildInWindows/ObjectProperty/Others/AsConstant.tscn" id="5_830em"]
+
+[node name="ChargedParticleProperty" type="VBoxContainer" unique_id=786984363]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nlyg7")
+script = ExtResource("2_nlyg7")
+
+[node name="Mass" type="VBoxContainer" parent="." unique_id=436736305]
+layout_mode = 2
+
+[node name="Value" type="HBoxContainer" parent="Mass" unique_id=1423873110]
+layout_mode = 2
+
+[node name="MassValue" type="HBoxContainer" parent="Mass/Value" unique_id=752950303]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Mass/Value/MassValue" unique_id=1029605966]
+layout_mode = 2
+text = "质量："
+
+[node name="LineEdit" parent="Mass/Value/MassValue" unique_id=266420381 instance=ExtResource("3_ngcuu")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+min_value = 0.0
+
+[node name="Index" type="SpinBox" parent="Mass/Value/MassValue" unique_id=1328166128]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_r1mtv")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Mass/Value/MassValue" unique_id=1457988419]
+layout_mode = 2
+text = "kg"
+
+[node name="Constant" parent="Mass/Value" unique_id=1618999396 instance=ExtResource("5_830em")]
+layout_mode = 2
+
+[node name="ChargePoint" type="HBoxContainer" parent="." unique_id=451640782]
+layout_mode = 2
+
+[node name="ChargePointBtn" type="HBoxContainer" parent="ChargePoint" unique_id=491199011]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ChargePoint/ChargePointBtn" unique_id=694381965]
+layout_mode = 2
+text = "是否视为点电荷："
+
+[node name="CheckBox" type="CheckBox" parent="ChargePoint/ChargePointBtn" unique_id=1615204993]
+layout_mode = 2
+disabled = true
+button_pressed = true
+flat = true
+
+[node name="ChargeTypes" type="HBoxContainer" parent="ChargePoint" unique_id=883877431]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ChargePoint/ChargeTypes" unique_id=713765122]
+layout_mode = 2
+text = "带电种类："
+
+[node name="OptionButton" type="OptionButton" parent="ChargePoint/ChargeTypes" unique_id=116359865]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "正电性"
+popup/item_0/id = 0
+popup/item_1/text = "负电性"
+popup/item_1/id = 1
+popup/item_2/text = "电中性"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+
+[node name="Charge" type="VBoxContainer" parent="." unique_id=1517182690]
+layout_mode = 2
+
+[node name="Value" type="HBoxContainer" parent="Charge" unique_id=1972572249]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Charge/Value" unique_id=1679825141]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Charge/Value/Value" unique_id=1937657780]
+layout_mode = 2
+text = "带电量："
+
+[node name="LineEdit" parent="Charge/Value/Value" unique_id=1289924790 instance=ExtResource("3_ngcuu")]
+layout_mode = 2
+text = "1"
+decimal_places = 0
+
+[node name="Index" type="SpinBox" parent="Charge/Value/Value" unique_id=698037654]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_r1mtv")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Charge/Value/Value" unique_id=764303645]
+layout_mode = 2
+text = "C"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Charge/Value" unique_id=1937278607 instance=ExtResource("5_830em")]
+layout_mode = 2
+
+[node name="TotalValue" type="HBoxContainer" parent="Charge" unique_id=1991286585]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Charge/TotalValue" unique_id=2130216914]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Charge/TotalValue/Value" unique_id=830485789]
+layout_mode = 2
+text = "总电荷："
+
+[node name="LineEdit" parent="Charge/TotalValue/Value" unique_id=1632918113 instance=ExtResource("3_ngcuu")]
+layout_mode = 2
+text = "1"
+decimal_places = 0
+
+[node name="Index" type="SpinBox" parent="Charge/TotalValue/Value" unique_id=1870465881]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_r1mtv")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Charge/TotalValue/Value" unique_id=1618303661]
+layout_mode = 2
+text = "C"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Charge/TotalValue" unique_id=500661512 instance=ExtResource("5_830em")]
+layout_mode = 2
+
+[node name="NetValue" type="HBoxContainer" parent="Charge" unique_id=2144580377]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="Charge/NetValue" unique_id=496704644]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Charge/NetValue/Value" unique_id=199704024]
+layout_mode = 2
+text = "净电荷："
+
+[node name="LineEdit" parent="Charge/NetValue/Value" unique_id=83099574 instance=ExtResource("3_ngcuu")]
+layout_mode = 2
+text = "1"
+decimal_places = 0
+
+[node name="Index" type="SpinBox" parent="Charge/NetValue/Value" unique_id=1046336729]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_r1mtv")
+allow_greater = true
+allow_lesser = true
+prefix = "e"
+
+[node name="Unit" type="Label" parent="Charge/NetValue/Value" unique_id=1154142374]
+layout_mode = 2
+text = "C"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Charge/NetValue" unique_id=670644454 instance=ExtResource("5_830em")]
+layout_mode = 2

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cv4l22umuwn0p"]
+
+[ext_resource type="Theme" uid="uid://cwylc3bemwtx5" path="res://Themes/Dark/RightClickMenu.tres" id="1_pbpyx"]
+
+[node name="SceneClickMenu" type="PopupMenu" unique_id=1818827192]
+oversampling_override = 1.0
+size = Vector2i(100, 159)
+visible = true
+theme = ExtResource("1_pbpyx")
+item_count = 5
+item_0/text = "禁用"
+item_0/checkable = 1
+item_0/id = 0
+item_0/disabled = true
+item_1/text = "设置"
+item_1/id = 5
+item_1/disabled = true
+item_2/id = 3
+item_2/separator = true
+item_3/text = "打印"
+item_3/id = 6
+item_4/text = "删除"
+item_4/id = 4

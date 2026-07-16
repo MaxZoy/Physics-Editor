@@ -1,0 +1,420 @@
+[gd_scene format=3 uid="uid://1vsgahkx3c2q"]
+
+[ext_resource type="Theme" uid="uid://b8j46s7401lek" path="res://Themes/Dark/ChildWindows.tres" id="1_31dgn"]
+[ext_resource type="Script" uid="uid://bsx02kyg764p0" path="res://Scripts/Editor/Items/SetPhysicsFieldWindows.gd" id="2_2xbnu"]
+[ext_resource type="PackedScene" uid="uid://ixsor534h1ay" path="res://Scenes/BuildInWindows/ObjectProperty/Others/AsConstant.tscn" id="3_abpwh"]
+[ext_resource type="Script" uid="uid://oew60huh0vv1" path="res://Scripts/Items/Fields/ExtensionModeLim.gd" id="3_tb0m7"]
+[ext_resource type="PackedScene" uid="uid://crcyie7k1akk8" path="res://Scenes/Editor/LimitedLineEdit.tscn" id="5_abpwh"]
+
+[node name="SetPhysicsField" type="Window" unique_id=1496429959]
+process_mode = 3
+oversampling_override = 1.0
+title = "设置物理场"
+initial_position = 2
+size = Vector2i(440, 480)
+transient = true
+transient_to_focused = true
+exclusive = true
+unresizable = true
+minimize_disabled = true
+maximize_disabled = true
+theme = ExtResource("1_31dgn")
+script = ExtResource("2_2xbnu")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=462547797]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1968279722]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IDCodeBox" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1054641804]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/IDCodeBox" unique_id=1963688455]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_font_sizes/font_size = 14
+text = "id_code:"
+
+[node name="Code" type="Label" parent="Panel/VBoxContainer/IDCodeBox" unique_id=1094033826]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_font_sizes/font_size = 14
+text = "*xxxxxx"
+
+[node name="CheckButton" type="CheckButton" parent="Panel/VBoxContainer/IDCodeBox" unique_id=1988749135]
+layout_mode = 2
+button_pressed = true
+text = "启用"
+flat = true
+alignment = 1
+
+[node name="b1" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=836488867]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NameBox" type="HBoxContainer" parent="Panel/VBoxContainer/b1" unique_id=1240823953]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b1/NameBox" unique_id=897310873]
+layout_mode = 2
+text = "名称："
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/b1/NameBox" unique_id=1857106239]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "（必填）"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+
+[node name="TypeBox" type="HBoxContainer" parent="Panel/VBoxContainer/b1" unique_id=705087743]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b1/TypeBox" unique_id=1800202305]
+layout_mode = 2
+text = "类型："
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/b1/TypeBox" unique_id=2060814524]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 4
+popup/item_0/text = "自定义场"
+popup/item_0/id = 0
+popup/item_1/text = "电场"
+popup/item_1/id = 1
+popup/item_2/text = "磁场"
+popup/item_2/id = 2
+popup/item_3/text = "重力场"
+popup/item_3/id = 3
+
+[node name="Value" type="HBoxContainer" parent="Panel/VBoxContainer/b1" unique_id=497342444]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Num" type="HBoxContainer" parent="Panel/VBoxContainer/b1/Value" unique_id=1524563480]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b1/Value/Num" unique_id=736434028]
+layout_mode = 2
+text = "数值："
+
+[node name="Num" type="SpinBox" parent="Panel/VBoxContainer/b1/Value/Num" unique_id=1861326083]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_31dgn")
+step = 0.01
+allow_greater = true
+select_all_on_focus = true
+
+[node name="Unit" type="Label" parent="Panel/VBoxContainer/b1/Value/Num" unique_id=964139519]
+layout_mode = 2
+text = "m/s²"
+horizontal_alignment = 2
+
+[node name="Constant" parent="Panel/VBoxContainer/b1/Value" unique_id=1618999396 instance=ExtResource("3_abpwh")]
+layout_mode = 2
+
+[node name="s1" type="HSeparator" parent="Panel/VBoxContainer" unique_id=1798789565]
+layout_mode = 2
+
+[node name="b2" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=1221189114]
+layout_mode = 2
+theme_override_constants/separation = 8
+script = ExtResource("3_tb0m7")
+
+[node name="InfiniteExtension" type="HBoxContainer" parent="Panel/VBoxContainer/b2" unique_id=1514284375]
+layout_mode = 2
+
+[node name="CanExtenseBtn" type="HBoxContainer" parent="Panel/VBoxContainer/b2/InfiniteExtension" unique_id=1000688253]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/InfiniteExtension/CanExtenseBtn" unique_id=726390322]
+layout_mode = 2
+text = "无限延伸："
+
+[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer/b2/InfiniteExtension/CanExtenseBtn" unique_id=104017475]
+layout_mode = 2
+button_pressed = true
+flat = true
+
+[node name="ExtenseMode" type="HBoxContainer" parent="Panel/VBoxContainer/b2/InfiniteExtension" unique_id=574367853]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/InfiniteExtension/ExtenseMode" unique_id=1492714532]
+layout_mode = 2
+text = "模式："
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/b2/InfiniteExtension/ExtenseMode" unique_id=940429475]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 15
+popup/item_0/text = "全伸展"
+popup/item_0/id = 0
+popup/item_1/text = "第Ⅰ卦限"
+popup/item_1/id = 1
+popup/item_2/text = "第Ⅱ卦限"
+popup/item_2/id = 2
+popup/item_3/text = "第Ⅲ卦限"
+popup/item_3/id = 3
+popup/item_4/text = "第Ⅳ卦限"
+popup/item_4/id = 4
+popup/item_5/text = "第 Ⅴ 卦限"
+popup/item_5/id = 11
+popup/item_6/text = "第 Ⅵ 卦限"
+popup/item_6/id = 12
+popup/item_7/text = "第 Ⅶ 卦限"
+popup/item_7/id = 13
+popup/item_8/text = "第 Ⅷ 卦限"
+popup/item_8/id = 14
+popup/item_9/text = "X上半空间"
+popup/item_9/id = 5
+popup/item_10/text = "X下半空间"
+popup/item_10/id = 6
+popup/item_11/text = "Y上半空间"
+popup/item_11/id = 7
+popup/item_12/text = "Y下半空间"
+popup/item_12/id = 8
+popup/item_13/text = "Z上半空间"
+popup/item_13/id = 9
+popup/item_14/text = "Z下半空间"
+popup/item_14/id = 10
+
+[node name="PositionBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2" unique_id=532274583]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/PositionBox" unique_id=1159587060]
+layout_mode = 2
+text = "位置："
+
+[node name="xBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2/PositionBox" unique_id=695529556]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/PositionBox/xBox" unique_id=1086993331]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/b2/PositionBox/xBox" unique_id=266420381 instance=ExtResource("5_abpwh")]
+layout_mode = 2
+
+[node name="yBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2/PositionBox" unique_id=107764300]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/PositionBox/yBox" unique_id=703956541]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/b2/PositionBox/yBox" unique_id=187055197 instance=ExtResource("5_abpwh")]
+layout_mode = 2
+
+[node name="zBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2/PositionBox" unique_id=118434319]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/PositionBox/zBox" unique_id=1861855381]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/b2/PositionBox/zBox" unique_id=352993596 instance=ExtResource("5_abpwh")]
+layout_mode = 2
+
+[node name="SizeBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2" unique_id=701612233]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/SizeBox" unique_id=1347224349]
+layout_mode = 2
+text = "大小："
+
+[node name="xBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2/SizeBox" unique_id=1858836326]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/SizeBox/xBox" unique_id=55068546]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/b2/SizeBox/xBox" unique_id=1311810088 instance=ExtResource("5_abpwh")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="yBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2/SizeBox" unique_id=660137584]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/SizeBox/yBox" unique_id=647263898]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/b2/SizeBox/yBox" unique_id=1685201271 instance=ExtResource("5_abpwh")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="zBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2/SizeBox" unique_id=1221746136]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/SizeBox/zBox" unique_id=1374971871]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/b2/SizeBox/zBox" unique_id=2021804666 instance=ExtResource("5_abpwh")]
+layout_mode = 2
+text = "1.0"
+limit_min = true
+limit_max = true
+min_value = 0.0
+max_value = 1000.0
+
+[node name="DirectionBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2" unique_id=2002064948]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/DirectionBox" unique_id=350418259]
+layout_mode = 2
+text = "方向："
+
+[node name="xBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2/DirectionBox" unique_id=227382596]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/DirectionBox/xBox" unique_id=1530430123]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/b2/DirectionBox/xBox" unique_id=879002932 instance=ExtResource("5_abpwh")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+
+[node name="yBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2/DirectionBox" unique_id=1622614063]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/DirectionBox/yBox" unique_id=114190360]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/b2/DirectionBox/yBox" unique_id=1003117810 instance=ExtResource("5_abpwh")]
+layout_mode = 2
+text = "-1.0"
+limit_min = true
+limit_max = true
+
+[node name="zBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2/DirectionBox" unique_id=1011089991]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/DirectionBox/zBox" unique_id=1600967531]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="Panel/VBoxContainer/b2/DirectionBox/zBox" unique_id=1795503926 instance=ExtResource("5_abpwh")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+
+[node name="ShowCollBox" type="HBoxContainer" parent="Panel/VBoxContainer/b2" unique_id=1326715283]
+layout_mode = 2
+
+[node name="ShowCollBtn" type="HBoxContainer" parent="Panel/VBoxContainer/b2/ShowCollBox" unique_id=602864162]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/ShowCollBox/ShowCollBtn" unique_id=209959110]
+layout_mode = 2
+text = "是否显示区域："
+
+[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer/b2/ShowCollBox/ShowCollBtn" unique_id=2134246668]
+layout_mode = 2
+button_pressed = true
+flat = true
+
+[node name="ColorSelect" type="HBoxContainer" parent="Panel/VBoxContainer/b2/ShowCollBox" unique_id=1257024326]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/b2/ShowCollBox/ColorSelect" unique_id=365164407]
+layout_mode = 2
+text = "颜色："
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Panel/VBoxContainer/b2/ShowCollBox/ColorSelect" unique_id=337279904]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+color = Color(0.47058824, 0.3529412, 1, 0.1254902)
+edit_alpha = false
+edit_intensity = false
+
+[node name="s2" type="HSeparator" parent="Panel/VBoxContainer" unique_id=297798376]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=1624556155]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1785496618]
+layout_mode = 2
+text = "描述："
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1046777360]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "（这是物理场）"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+wrap_mode = 1
+
+[node name="ConfirmBox" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=912912793]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Yes" type="Button" parent="Panel/VBoxContainer/ConfirmBox" unique_id=1924800310]
+layout_mode = 2
+text = "确定"
+
+[node name="Delete" type="Button" parent="Panel/VBoxContainer/ConfirmBox" unique_id=234162319]
+layout_mode = 2
+text = "删除"
+
+[node name="No" type="Button" parent="Panel/VBoxContainer/ConfirmBox" unique_id=378596855]
+layout_mode = 2
+text = "取消"

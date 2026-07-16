@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://hpyojog7vekg"]
+
+[ext_resource type="Theme" uid="uid://itlp4rfufo13" path="res://Themes/Dark/FoldableContainers.tres" id="1_mp0e1"]
+[ext_resource type="Theme" uid="uid://b8j46s7401lek" path="res://Themes/Dark/ChildWindows.tres" id="2_g0uc4"]
+[ext_resource type="Script" uid="uid://wple180b0ybv" path="res://Scripts/Editor/Items/FieldPanelCtrl.gd" id="2_ou026"]
+[ext_resource type="PackedScene" uid="uid://crcyie7k1akk8" path="res://Scenes/Editor/LimitedLineEdit.tscn" id="4_hhugx"]
+[ext_resource type="Texture2D" uid="uid://c3k33hx8a5kt6" path="res://Sprites/icon/setting.png" id="5_g0uc4"]
+[ext_resource type="PackedScene" uid="uid://cv4l22umuwn0p" path="res://Scenes/Editor/SceneClickMenu.tscn" id="6_hhugx"]
+
+[node name="FieldPanel" type="PanelContainer" unique_id=1368600558]
+offset_right = 234.0
+offset_bottom = 60.0
+theme = ExtResource("1_mp0e1")
+script = ExtResource("2_ou026")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1971777360]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="SplitContainer" type="HSplitContainer" parent="HBoxContainer" unique_id=1771246464]
+layout_mode = 2
+size_flags_horizontal = 3
+dragging_enabled = false
+
+[node name="Info" type="VBoxContainer" parent="HBoxContainer/SplitContainer" unique_id=889911151]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="HBoxContainer/SplitContainer/Info" unique_id=1295393653]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "自定义场"
+clip_text = true
+text_overrun_behavior = 5
+
+[node name="ID_code" type="Label" parent="HBoxContainer/SplitContainer/Info" unique_id=1521242192]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+text = "*xxxxxx"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/SplitContainer" unique_id=660204516]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="HBoxContainer" parent="HBoxContainer/SplitContainer/VBoxContainer" unique_id=223495454]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/SplitContainer/VBoxContainer/Value" unique_id=257678734]
+layout_mode = 2
+text = "数值："
+
+[node name="Num" type="SpinBox" parent="HBoxContainer/SplitContainer/VBoxContainer/Value" unique_id=1543337775]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_g0uc4")
+step = 0.01
+allow_greater = true
+
+[node name="Unit" type="Label" parent="HBoxContainer/SplitContainer/VBoxContainer/Value" unique_id=391223161]
+layout_mode = 2
+text = "m/s²"
+horizontal_alignment = 2
+
+[node name="DirectionBox" type="HBoxContainer" parent="HBoxContainer/SplitContainer/VBoxContainer" unique_id=604093746]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox" unique_id=694323860]
+layout_mode = 2
+text = "方向："
+
+[node name="xBox" type="HBoxContainer" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox" unique_id=916422783]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox/xBox" unique_id=2130685028]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox/xBox" unique_id=266420381 instance=ExtResource("4_hhugx")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+
+[node name="yBox" type="HBoxContainer" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox" unique_id=529006124]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox/yBox" unique_id=882424118]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox/yBox" unique_id=16667030 instance=ExtResource("4_hhugx")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+
+[node name="zBox" type="HBoxContainer" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox" unique_id=1527602622]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox/zBox" unique_id=1393921065]
+layout_mode = 2
+text = "Z"
+
+[node name="LineEdit" parent="HBoxContainer/SplitContainer/VBoxContainer/DirectionBox/zBox" unique_id=424157814 instance=ExtResource("4_hhugx")]
+layout_mode = 2
+limit_min = true
+limit_max = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=595850927]
+layout_mode = 2
+alignment = 1
+
+[node name="SettingButton" type="TextureButton" parent="HBoxContainer/VBoxContainer" unique_id=270497201]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("5_g0uc4")
+
+[node name="SceneClickMenu" parent="." unique_id=1818827192 instance=ExtResource("6_hhugx")]
+visible = false

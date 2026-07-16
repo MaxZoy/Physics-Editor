@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d0nw5r61qi5kp"]
+
+[ext_resource type="Script" uid="uid://b6l5mk8bdrqxl" path="res://Scripts/Editor/AxisGrid3d.gd" id="1_xixy4"]
+
+[node name="AxisGrid3D" type="CanvasLayer" unique_id=1883385331]
+
+[node name="Panel" type="Control" parent="." unique_id=1637894453]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xixy4")

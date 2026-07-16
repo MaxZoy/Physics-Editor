@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ixsor534h1ay"]
+
+[ext_resource type="Theme" uid="uid://itlp4rfufo13" path="res://Themes/Dark/FoldableContainers.tres" id="1_7c7iy"]
+
+[node name="Constant" type="HBoxContainer" unique_id=1618999396]
+visible = false
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme = ExtResource("1_7c7iy")
+
+[node name="Label" type="Label" parent="." unique_id=402533640]
+layout_mode = 2
+text = "常量："
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=2020456240]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "参与计算"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false

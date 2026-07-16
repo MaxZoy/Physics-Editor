@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://buw4kd8r3cp1k"]
+
+[ext_resource type="Theme" uid="uid://b8j46s7401lek" path="res://Themes/Dark/ChildWindows.tres" id="1_jja35"]
+[ext_resource type="Texture2D" uid="uid://dkdda81ypen1b" path="res://Sprites/app_icon_256.png" id="2_0delb"]
+[ext_resource type="Script" uid="uid://b7lt6qciv5n3x" path="res://Scripts/Editor/AboutWindows.gd" id="2_dtq53"]
+
+[node name="AboutWindows" type="Window" unique_id=1496429959]
+process_mode = 3
+oversampling_override = 1.0
+title = "关于"
+initial_position = 2
+size = Vector2i(400, 240)
+transient = true
+transient_to_focused = true
+exclusive = true
+unresizable = true
+minimize_disabled = true
+maximize_disabled = true
+theme = ExtResource("1_jja35")
+script = ExtResource("2_dtq53")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=550712641]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1749526860]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1689718465]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1301585578]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Physics Editor"
+
+[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1203477871]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_0delb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=357865391]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Version" type="Label" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1202331460]
+layout_mode = 2
+text = "版本：x.x.x.x"
+
+[node name="Author" type="Label" parent="Panel/VBoxContainer/VBoxContainer" unique_id=367868591]
+layout_mode = 2
+text = "作者：MaxZoy"
+
+[node name="Email" type="Label" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1487518518]
+layout_mode = 2
+text = "联系作者：Zengzixuan0812@outlook.com"
+
+[node name="Right" type="Label" parent="Panel/VBoxContainer" unique_id=325566488]
+layout_mode = 2
+text = "版权所有 © 2026 MaxZoy 保留所有权利"

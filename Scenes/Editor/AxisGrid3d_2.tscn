@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://nn8uiq60aj8m"]
+
+[ext_resource type="Script" uid="uid://b24t2ouilibr0" path="res://Scripts/Editor/AxisGrid3d_2.gd" id="1_nvbyn"]
+
+[node name="AxisGrid3D" type="Node3D" unique_id=59089312]
+script = ExtResource("1_nvbyn")

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://djtepkjgrwfq8"]
+
+[ext_resource type="Theme" uid="uid://cwylc3bemwtx5" path="res://Themes/Dark/RightClickMenu.tres" id="1_gjkre"]
+
+[node name="RightClickMenu" type="PopupMenu" unique_id=1644196440]
+oversampling_override = 1.0
+size = Vector2i(129, 232)
+visible = true
+theme = ExtResource("1_gjkre")
+item_count = 12
+item_0/text = "新建物理场"
+item_0/id = 0
+item_1/text = "新建研究对象"
+item_1/id = 1
+item_1/disabled = true
+item_2/text = "新建接触面"
+item_2/id = 4
+item_2/disabled = true
+item_3/text = "新建实验器材"
+item_3/id = 5
+item_3/disabled = true
+item_4/text = "新建电路"
+item_4/id = 6
+item_4/disabled = true
+item_5/id = 2
+item_5/separator = true
+item_6/text = "复制"
+item_6/id = 9
+item_6/disabled = true
+item_7/text = "粘贴"
+item_7/id = 10
+item_7/disabled = true
+item_8/text = "剪切"
+item_8/id = 11
+item_8/disabled = true
+item_9/id = 8
+item_9/separator = true
+item_10/text = "吸附网格"
+item_10/checkable = 1
+item_10/id = 3
+item_10/disabled = true
+item_11/text = "添加监测点"
+item_11/id = 7
+item_11/disabled = true
