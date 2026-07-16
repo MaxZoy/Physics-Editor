@@ -1,0 +1,39 @@
+[gd_resource type="Theme" format=3 uid="uid://je474oya5dul"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahemd"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7np2"]
+bg_color = Color(0.27557606, 0.27557606, 0.27557606, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsvvq"]
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6313726, 0.6313726, 0.6313726, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[resource]
+MenuButton/font_sizes/font_size = 13
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ahemd")
+PopupMenu/constants/h_separation = 8
+PopupMenu/constants/item_end_padding = 8
+PopupMenu/constants/item_start_padding = 16
+PopupMenu/font_sizes/font_separator_size = 12
+PopupMenu/font_sizes/font_size = 13
+PopupMenu/font_sizes/title_font_size = 12
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_c7np2")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_fsvvq")

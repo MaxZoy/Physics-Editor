@@ -1,0 +1,4 @@
+[gd_resource type="Theme" format=3 uid="uid://d0ilg0g37c7mg"]
+
+[resource]
+FileDialog/font_sizes/title_font_size = 14

@@ -1,0 +1,87 @@
+[gd_resource type="Theme" format=3 uid="uid://diew2hc38g73g"]
+
+[ext_resource type="FontFile" uid="uid://d0vgnbnylp4ja" path="res://Fonts/consolab.ttf" id="1_k5tyg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5tyg"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2wtc"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsrev"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86p3k"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pm3f5"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6ere"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81575"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt3jh"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_i6ere"]
+thickness = 6
+vertical = true
+
+[resource]
+LineEdit/font_sizes/font_size = 16
+LineEdit/styles/focus = SubResource("StyleBoxFlat_k5tyg")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_f2wtc")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_jsrev")
+RichTextLabel/font_sizes/normal_font_size = 14
+RichTextLabel/fonts/normal_font = ExtResource("1_k5tyg")
+TextEdit/font_sizes/font_size = 14
+TextEdit/styles/focus = SubResource("StyleBoxFlat_86p3k")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_pm3f5")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_i6ere")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_81575")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_pt3jh")
+VScrollBar/styles/scroll = SubResource("StyleBoxLine_i6ere")
+VSplitContainer/constants/separation = 6
