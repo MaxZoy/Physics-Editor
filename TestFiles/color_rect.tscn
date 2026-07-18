@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://c4ru64nriap5o"]
-
-[node name="ColorRect" type="ColorRect" unique_id=690279227]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0.45895782, 0.45043758, 1)
